@@ -1,0 +1,33 @@
+
+
+### GET ALL
+GET http://127.0.0.1:3000 HTTP/1.1
+
+### GET ONE 
+GET http://127.0.0.1:3000/2 HTTP/1.1
+
+### GET SWAGGER
+GET http://127.0.0.1:3000/docs HTTP/1.1
+
+### Post 
+POST http://127.0.0.1:3000 HTTP/1.1
+content-type: application/json
+
+{
+    "product": "smartphone",
+    "color": "yellow",
+    "price": 432
+}
+
+### Delete ONE 
+DELETE  http://127.0.0.1:3000/2 HTTP/1.1
+
+### Update one  
+PUT http://127.0.0.1:3000/3 HTTP/1.1
+content-type: application/json
+
+{
+    "product": "smartphone",
+    "color": "yellow",
+    "price": 432
+}
