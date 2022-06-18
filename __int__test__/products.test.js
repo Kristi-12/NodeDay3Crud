@@ -85,17 +85,6 @@ describe("Integration tests for CRUD operations to test postgres Database", () =
         });
     });
 
-    //GET ALL
-    test("Should get all products via GET route", async () => {
-
-        const response = await app.inject({
-            method: "GET",
-            url: "/v2",
-        })
-
-        expect(response.statusCode).toBe(200)
-        expect(response.json()).toMatchObject([{ "color": "yellow", "excluded_vat_amount": "3.33", "gross_amount": "20", "net_amount": "16.67", "price": 432, "product": "smartphone" }])
-    })
 
 
 
