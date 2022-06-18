@@ -1,0 +1,35 @@
+### GET ALL Products
+GET http://127.0.0.1:3000/v2 HTTP/1.1
+
+
+### GET ONE PRODUCT
+GET http://127.0.0.1:3000/v2/9 HTTP/1.1
+
+
+### POST ADD A NEW PRODUCT
+POST http://127.0.0.1:3000/v2 HTTP/1.1
+content-type: application/json
+
+{
+    "product": "smartphone",
+    "color": "yellow",
+    "price": 432
+}
+
+### Delete ONE PRODUCT
+DELETE  http://127.0.0.1:3000/v2/11 HTTP/1.1
+
+### UPDATE ONE PRODUCT
+PUT http://127.0.0.1:3000/v2/9 HTTP/1.1
+content-type: application/json
+
+{
+    "product": "New updated smartphone",
+    "color": "Updated Color",
+    "price": 422
+}
+
+
+### DB Test
+GET http://127.0.0.1:3000/time HTTP/1.1
+

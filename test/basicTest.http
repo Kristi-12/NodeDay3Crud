@@ -31,3 +31,8 @@ content-type: application/json
     "color": "yellow",
     "price": 432
 }
+
+
+### DB Test
+GET http://127.0.0.1:3000/time HTTP/1.1
+
