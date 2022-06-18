@@ -24,6 +24,53 @@ describe("Integration tests for CRUD operations to test postgres Database", () =
         expect(response.json()).toMatchObject(product)
     })
 
+    //GET ALL PRODUCTS
+
+    test("Should get all product via GET route", async () => {
+
+        const response = await app.inject({
+            method: "GET",
+            url: "/v2",
+        })
+
+        expect(response.statusCode).toBe(200)
+        expect(response.json()).toMatchObject([{ color: "yellow", excluded_vat_amount: "3.33", gross_amount: "20", net_amount: "16.67", price: 432, product: "smartphone" }])
+    })
+
+    //GET ONE PRODUCT
+
+    test("Should get one product via GET route", async () => {
+
+        const response = await app.inject({
+            method: "GET",
+            url: "/v2/1",
+
+        })
+
+        expect(response.statusCode).toBe(200)
+        expect(response.json()).toMatchObject([{ color: "yellow", excluded_vat_amount: "3.33", gross_amount: "20", net_amount: "16.67", price: 432, product: "smartphone" }])
+    })
+
+    //UPDATE ONE PRODUCT
+
+    test("Should update an product via PUT route", async () => {
+        const product = {
+            product: "Smartphone2",
+            color: "yellow2",
+            price: 433
+        }
+
+        const response = await app.inject({
+            method: "PUT",
+            url: "/v2/276",
+            payload: product
+        })
+
+        expect(response.statusCode).toBe(200)
+        expect(response.json()).toMatchObject(product)
+    })
+
+
     //DELETE TEST
     test("Should delete a product by DELETE route", async () => {
 
@@ -49,6 +96,8 @@ describe("Integration tests for CRUD operations to test postgres Database", () =
         expect(response.statusCode).toBe(200)
         expect(response.json()).toMatchObject([{ "color": "yellow", "excluded_vat_amount": "3.33", "gross_amount": "20", "net_amount": "16.67", "price": 432, "product": "smartphone" }])
     })
+
+
 
 
 })

@@ -3,7 +3,7 @@ GET http://127.0.0.1:3000/v2 HTTP/1.1
 
 
 ### GET ONE PRODUCT
-GET http://127.0.0.1:3000/v2/9 HTTP/1.1
+GET http://127.0.0.1:3000/v2/98 HTTP/1.1
 
 
 ### POST ADD A NEW PRODUCT
@@ -11,16 +11,20 @@ POST http://127.0.0.1:3000/v2 HTTP/1.1
 content-type: application/json
 
 {
-    "product": "smartphone",
-    "color": "yellow",
-    "price": 432
+    
+    "product": "temp2",
+    "color": "green",
+    "price": 44,
+    "gross_amount" : 24,
+    "net_amount" : 12.3,
+    "excluded_vat_amount" : 3
 }
 
 ### Delete ONE PRODUCT
-DELETE  http://127.0.0.1:3000/v2/11 HTTP/1.1
+DELETE  http://127.0.0.1:3000/v2/1 HTTP/1.1
 
 ### UPDATE ONE PRODUCT
-PUT http://127.0.0.1:3000/v2/9 HTTP/1.1
+PUT http://127.0.0.1:3000/v2/276 HTTP/1.1
 content-type: application/json
 
 {
