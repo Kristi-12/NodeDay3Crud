@@ -48,7 +48,7 @@ describe("Integration tests for CRUD operations to test postgres Database", () =
         })
 
         expect(response.statusCode).toBe(200)
-        expect(response.json()).toMatchObject([{ color: "yellow", excluded_vat_amount: "3.33", gross_amount: "20", net_amount: "16.67", price: 432, product: "smartphone" }])
+        expect(response.json()).toMatchObject({ "color": "yellow", "excluded_vat_amount": "3.33", "gross_amount": "20", "id": 1, "net_amount": "16.67", "price": 432, "product": "smartphone" })
     })
 
     //UPDATE ONE PRODUCT
@@ -62,12 +62,12 @@ describe("Integration tests for CRUD operations to test postgres Database", () =
 
         const response = await app.inject({
             method: "PUT",
-            url: "/v2/276",
+            url: "/v2/1",
             payload: product
         })
 
         expect(response.statusCode).toBe(200)
-        expect(response.json()).toMatchObject(product)
+        expect(response.json()).toMatchObject({ "color": "yellow2", "excluded_vat_amount": "3.33", "gross_amount": "20", "id": 1, "net_amount": "16.67", "price": 433, "product": "Smartphone2" })
     })
 
 
